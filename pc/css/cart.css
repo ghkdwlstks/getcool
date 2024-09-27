@@ -1,0 +1,188 @@
+header {
+    margin-top: 30px;
+    display : flex;
+    justify-content: center; /* 세로 */
+}
+.search_box {
+    height: 40px;
+    width: 700px;
+    background-color: #BFD594;
+    border : 1px solid #BFD594;
+    border-radius: 40px;
+}
+.search_text {
+    border : none;
+    background: none;
+    outline: none; /* 포커스 시 외곽선 제거 */
+    font-size: 16px; /* 폰트 크기 */
+    margin-left: 20px;
+    height: 40px;
+    width: 600px;
+}
+.search_btn {
+    color : #6D8B12;
+    border : none;
+    background: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.logo {
+    font-weight: bolder;
+    font-size: 28px;
+    display : inline-block;
+}
+.logo a {
+    text-decoration: none;
+    color: #6D8B12;
+}
+.search {
+    display : inline-block;
+    margin-left: 20px;
+}
+.h_cart {
+    position : relative;
+    background: none;
+    border : none;
+    font-size: 30px;
+    margin : 0;
+    padding : 0;
+    color: #6D8B12;
+    cursor: pointer;
+}
+.hc_txt {
+    margin : 0;
+    margin-left: 3px;
+    padding : 0;
+    font-size: 12px;
+}
+.h_cart_container {
+    display : flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width : 70px;
+    margin-left : 0px;
+    position: relative; /* 자식 요소의 절대 위치를 기준으로 설정 */
+}
+.h_cart_container a {
+    text-decoration: none;
+    color: #6D8B12; /* 기본 텍스트 색상 */
+}
+.h_btn {
+    display : flex;
+    align-items: center; /* 가로 */
+    margin-left : 30px;
+}
+
+.l_s {
+    display : flex;
+    justify-content: center; /* 세로 */
+    align-items: center; /* 가로 */
+}
+.l_cate {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer; /* 클릭 가능한 커서로 변경 */
+    position: relative;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cart-header {
+    background-color: #8BB600;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.cart {
+    display: flex;
+}
+
+.cart-items {
+    flex: 3;
+}
+
+.cart-summary {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.cart-item-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-quantity button {
+    background-color: #8BB600;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart-item-quantity input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.cart-summary {
+    text-align: center;
+}
+
+.cart-summary-total {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cart-summary button {
+    background-color: #8BB600;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-summary button:hover {
+    background-color: #7aa800;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9a9efcd4cd.js" crossorigin="anonymous"></script>
+    <title>전통시장 배달 현황</title>
+    <link rel="stylesheet" href="css/deliver.css">
+</head>
+<body>
+    <header>
+        <div class = "l_s">
+            <div class = "logo">
+                <p class = "logo_text"><a href="main.html">GET-COOL</a></p>
+            </div>
+            <div class = "search">
+                <form class = "search_box" action="" method="get">
+                    <input class = "search_text" type = "text" placeholder="검색어를 입력하세요."/>
+                    <button class="search_btn" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+                </form>
+            </div>
+        </div>
+        <div class = "h_btn">
+            <div class = "h_cart_container"><a href="cart.html">
+                <button class="h_cart" id="cartButton"><i class="fa-solid fa-shopping-cart"></i></button>
+                <p class="hc_txt">장바구니</p></a>
+            </div>
+            <div class = "h_cart_container"><a href="orders.html">
+                <button class="h_cart"><i class="fa-solid fa-user"></i></button>
+                <p class="hc_txt">마이페이지</p></a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class = "cate_container">
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="orders.html">주문 조회</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="deliver.html">배송 관리</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="request.html">1:1 문의</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="account.html">정보 수정</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="exit.html">회원 탈퇴</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <hr class = "main_start">
+
+    <div class="content">
+        <h1>배달 현황</h1>
+        <!-- 물품 목록 -->
+        <div class="order-item">
+            <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="상품 이미지">
+            <div class="status-container">
+                <div class="status-step active">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="주문접수">
+                    <div class="status-title">주문접수</div>
+                    <div class="status-description">판매자가 주문을 접수한 상태</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="검수">
+                    <div class="status-title">검수</div>
+                    <div class="status-description">판매자가 물품을 검수하는 단계</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="배달중">
+                    <div class="status-title">배달중</div>
+                    <div class="status-description">배달중인 단계</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="배달완료">
+                    <div class="status-title">배달완료</div>
+                    <div class="status-description">배달 완료인 단계</div>
+                </div>
+            </div>
+        </div>
+        <!-- 추가 물품 목록 -->
+        <div class="order-item">
+            <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="상품 이미지">
+            <div class="status-container">
+                <div class="status-step active">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="주문접수">
+                    <div class="status-title">주문접수</div>
+                    <div class="status-description">판매자가 주문을 접수한 상태</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="검수">
+                    <div class="status-title">검수</div>
+                    <div class="status-description">판매자가 물품을 검수하는 단계</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="배달중">
+                    <div class="status-title">배달중</div>
+                    <div class="status-description">배달중인 단계</div>
+                </div>
+                <div class="status-step">
+                    <img src="file-ULsFpk9C4EzhpWnLBvuxPNPR" alt="배달완료">
+                    <div class="status-title">배달완료</div>
+                    <div class="status-description">배달 완료인 단계</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

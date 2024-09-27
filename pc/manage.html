@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET-COOL 상품관리</title>
+    <script src="https://kit.fontawesome.com/9a9efcd4cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/manage.css">
+</head>
+<body>
+    <header>
+        <div class = "l_s">
+            <div class = "logo">
+                <p class = "logo_text"><a href="main.html">GET-COOL</a></p>
+            </div>
+            <div class = "search">
+                <form class = "search_box" action="" method="get">
+                    <input class = "search_text" type = "text" placeholder="검색어를 입력하세요."/>
+                    <button class="search_btn" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+                </form>
+            </div>
+        </div>
+        <div class = "h_btn">
+            <div class = "h_cart_container"><a href="cart.html">
+                <button class="h_cart" id="cartButton"><i class="fa-solid fa-shopping-cart"></i></button>
+                <p class="hc_txt">장바구니</p></a>
+            </div>
+            <div class = "h_cart_container"><a href="orders.html">
+                <button class="h_cart"><i class="fa-solid fa-user"></i></button>
+                <p class="hc_txt">마이페이지</p></a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class = "cate_container">
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="register.html">상품 등록</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="manage.html">상품 관리</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class = "cate_c">
+                <div class = "cate">
+                    <div class = "l_cate">
+                        <p><a href="shipping.html">배송 관리</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <hr class = "main_start">
+
+    <main>
+        <section id="manage">
+            <div class="product-gallery">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" alt="상품 이미지">
+                    <div class="product-info">
+                        <p>상품명 1</p>
+                        <p>가격: 10000원</p>
+                    </div>
+                    <button class="edit-btn">편집</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" alt="상품 이미지">
+                    <div class="product-info">
+                        <p>상품명 2</p>
+                        <p>가격: 20000원</p>
+                    </div>
+                    <button class="edit-btn">편집</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" alt="상품 이미지">
+                    <div class="product-info">
+                        <p>상품명 3</p>
+                        <p>가격: 30000원</p>
+                    </div>
+                    <button class="edit-btn">편집</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GET-COOL</p>
+    </footer>
+
+</body>
+</html>
