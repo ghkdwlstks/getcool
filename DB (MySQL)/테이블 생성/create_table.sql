@@ -1,4 +1,7 @@
--- 데이터베이스 이름 : getcoolDB로 설정(임시)
+-- 2024.10.04 create, tlgusyu
+-- 2024.10.04 update, tlgusyu
+
+-- getcool DB 이름 : getcoolDB로 설정
 -- CREATE DATABASE getcoolDB;
 USE getcoolDB;
 
@@ -34,6 +37,11 @@ create table product (
     description TEXT,
     created_at DATETIME NOT NULL
 );
+-- user 삭제 시, 상품도 함께 삭제
+ALTER TABLE product
+ADD CONSTRAINT fk_seller
+FOREIGN KEY (seller_id) REFERENCES user(user_id)
+ON DELETE CASCADE;
 
 CREATE TABLE review (
 	reveiw_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -45,3 +53,8 @@ CREATE TABLE review (
     comment TEXT NOT NULL,
     review_date datetime NOT NULL
 );
+-- user 삭제 시, 리뷰도 함께 삭제
+ALTER TABLE review
+ADD CONSTRAINT fk_user
+FOREIGN KEY (user_id) REFERENCES user(user_id)
+ON DELETE CASCADE;
