@@ -1,5 +1,5 @@
--- 2024.10.04 create, tlgusyu
--- 2024.10.04 update, tlgusyu
+-- 2024.10.04 create, shihyun
+-- 2024.10.11 update, shihyun
 
 -- getcool DB 이름 : getcoolDB로 설정
 -- CREATE DATABASE getcoolDB;
@@ -58,3 +58,13 @@ ALTER TABLE review
 ADD CONSTRAINT fk_user
 FOREIGN KEY (user_id) REFERENCES user(user_id)
 ON DELETE CASCADE;
+
+# 장바구니 테이블
+CREATE TABLE cart (
+	cart_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
+);
