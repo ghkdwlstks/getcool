@@ -1,5 +1,5 @@
--- create 2024. 10. 04
--- update 2024. 10. 04
+-- create 2024. 10. 04, shihyun
+-- update 2024. 10. 11, shihyun
 
 -- Update DB
 
@@ -17,3 +17,8 @@ SET product_name = ?,
 	price = ?,
     description = ?
 WHERE product_id = ?;
+
+# 장바구니 수량 변경
+UPDATE cart
+SET quantity = ?
+WHERE user_id = ? AND product_id = ?;
