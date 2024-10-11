@@ -1,7 +1,8 @@
--- 2024.10.04 create, tlgusyu
+-- 2024.10.04 create, shihyun
 -- SQL 삽입
 -- select * from user;
 -- select * from product;
+-- ################################################### 테스트용 데이터
 
 -- ex) user table
 INSERT INTO user (name, email, password, user_type, phone_number, address, registration_date)
