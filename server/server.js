@@ -23,18 +23,18 @@ app.post('/api/cart', (req, res) => {
   console.log("POST request received at /api/cart");
   console.log("Request Body:", req.body);
 
-  const { user_id, product_id, quantity, price } = req.body;
+  const { buyer_id, product_id, quantity, price } = req.body;
 
   // 수신된 price 확인
   console.log("Received Price:", price); 
 
   const query = `
       INSERT INTO cart 
-      (user_id, product_id, quantity, price)
+      (buyer_id, product_id, quantity, price)
       VALUES (?, ?, ?, ?)
   `;
 
-  db.query(query, [user_id, product_id, quantity, price], (err, result) => {
+  db.query(query, [buyer_id, product_id, quantity, price], (err, result) => {
       if (err) {
           console.error("Database insert error:", err);
           res.status(500).send("Database insert error");
