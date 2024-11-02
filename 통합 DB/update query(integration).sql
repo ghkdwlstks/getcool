@@ -1,4 +1,5 @@
 -- 2024. 10. 16 integration
+-- 2024. 11. 02 last updates
 -- Update DB
 
 # order-info.html
@@ -19,7 +20,7 @@ WHERE product_id = ?;
 # 장바구니 수량 변경
 UPDATE cart
 SET quantity = ?
-WHERE user_id = ? AND product_id = ?;
+WHERE buyer_id = ? AND product_id = ?;
 
 -- 배송 정보 수정 (배송 ID로 수정)
 UPDATE delivery
@@ -53,7 +54,7 @@ WHERE order_id = 1;
 -- 특정 사용자의 모든 주문 상태를 '배송 중'으로 변경 (예: user_id가 2인 경우)
 UPDATE `order`
 SET order_status = '배송 중'
-WHERE user_id = 2;
+WHERE buyer_id = 2;
 -- 특정 주문 상세 정보에서 수량과 주문 당시 가격을 갱신 (예: order_detail_id가 3인 경우)
 UPDATE order_detail
 SET quantity = 10, 
