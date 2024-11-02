@@ -1,6 +1,7 @@
 -- 2024. 10. 16 integration
+-- 2024. 11. 02 last updates
 
-# index.html
+# ndex.html
 # 상품 등록
 INSERT INTO product (seller_id, category_id, product_name, price, stock_quantity, expiration_date, discounted_price, description, created_at)
 VALUES 
@@ -8,7 +9,7 @@ VALUES
 	-- ? : Nods.js의 검색어 들어가는 자리
     
 # 장바구니 넣기
-INSERT INTO cart (user_id, product_id, quantity)
+INSERT INTO cart (buyer_id, product_id, quantity)
 VALUES
 (?, ?, ?);
 	-- ? : Nods.js
@@ -19,7 +20,7 @@ VALUES
 ('김철수', 'chulsoo@example.com', 'encrypted_password', '소비자', '010-1234-5678', '서울특별시 강남구', '2024-10-01'),
 ('홍길동', 'gildong@example.com', 'encrypted_password', '판매자', '010-9876-5432', '경기도 성남시', '2024-09-20');
 -- 주문 정보 삽입
-INSERT INTO `order` (user_id, order_date, total_amount, order_status)
+INSERT INTO `order` (buyer_id, order_date, total_amount, order_status)
 VALUES
 (1, '2024-10-02 14:30:00', 150000, '배송 중'),  -- user_id는 1번 사용자
 (2, '2024-10-03 10:15:00', 300000, '대기');    -- user_id는 2번 사용자
