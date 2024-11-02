@@ -1,5 +1,11 @@
 -- 2024.10.16 integration
+-- 2024. 11. 02 last updates
 -- 데이터 조회
+-- select * from product;
+-- select * from user;
+-- select * from category;
+-- select * from `order`;
+
 
 # category0823.html
 # 상품 조회 (검색창) : 상품명으로 검색, 기본 검색 조건 : 거리순 (거리순 --> 이름순)
@@ -21,6 +27,7 @@ WHERE p.category_id = ?
 ORDER BY product_name asc;
 	-- 가격순 필터 적용시 'ORDER BY p.discounted_price ASC'
     
+
 # ProductDetail.html
 # 상품 상세 조회 --> 판매자명, 리뷰점수(평균), 리뷰수, 상품명, 원가, 할인가, 상품설명
 SELECT 
@@ -65,7 +72,7 @@ WHERE user_id = ?;
 # 리뷰 수 조회
 SELECT COUNT(*)
 FROM review
-WHERE user_id = ?;
+WHERE buyer_id = ?;
 	-- ? : Nods.js의 검색어 들어가는 자리
 
 # product_info
@@ -92,10 +99,10 @@ ORDER BY product_name asc;
     
 # wishlist.html
 # 사용자의 장바구니 조회
-SELECT c.user_id, c.product_id, p.product_name, p.discounted_price, c.quantity
+SELECT c.buyer_id, c.product_id, p.product_name, p.discounted_price, c.quantity
 FROM cart c
 JOIN product p ON c.product_id = p.product_id
-WHERE c.user_id = ?;
+WHERE c.buyer_id = ?;
 	-- ? : Nods.js의 검색어 들어가는 자리
 
 -- 배송 정보 조회
@@ -169,7 +176,7 @@ WHERE name = '홍길동';
 -- 3. 특정 이메일로 조회 ('example@example.com' 이메일을 가진 사용자)
 SELECT * 
 FROM user
-WHERE email = 'example@example.com';
+WHERE email = 'chulsu@example.com';
 
 -- 4. 특정 사용자 유형으로 조회 ('판매자' 유형 사용자)
 SELECT * 
@@ -210,7 +217,7 @@ WHERE user_type = '소비자'
   -- 1. 전체 주문과 해당하는 주문 상세 정보를 조회
 SELECT 
     o.order_id,         -- 주문 ID
-    o.user_id,          -- 사용자 ID
+    o.buyer_id,          -- 사용자 ID
     o.order_date,       -- 주문 날짜
     o.total_amount,     -- 총 주문 금액
     o.order_status,     -- 주문 상태
@@ -225,7 +232,7 @@ JOIN
 -- 2. 특정 사용자(user_id = 3)의 모든 주문과 주문 상세 정보 조회
 SELECT 
     o.order_id,
-    o.user_id,
+    o.buyer_id,
     o.order_date,
     o.total_amount,
     o.order_status,
@@ -237,12 +244,12 @@ FROM
 JOIN 
     order_detail od ON o.order_id = od.order_id
 WHERE 
-    o.user_id = 3; -- 특정 사용자 ID 필터링
+    o.buyer_id = 3; -- 특정 사용자 ID 필터링
 
 -- 3. 주문 상태가 '배송 완료'인 주문과 주문 상세 정보 조회
 SELECT 
     o.order_id,
-    o.user_id,
+    o.buyer_id,
     o.order_date,
     o.total_amount,
     o.order_status,
