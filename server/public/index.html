@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 등록 - GET COOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+
+
+
+<header>
+    <a href="mobilemain0823.html"><div class="logo">
+        GET - COOL
+    </div></a>
+</header>
+<div>
+    <!--메뉴 바-->
+    <hr class="divider">
+
+    <div class="menu-bar">
+        <a href="check.html" class="menu-item">가게 현황</a>
+        <a href="product_list.html" class="menu-item">상품 관리</a>
+        <a href="#" class="menu-item">가게 문의</a>
+        <a href="edit_Minfo.html" class="menu-item">정보 수정</a>
+    </div>
+
+    <hr class="divider">
+
+</div>   
+    <main>
+        <h2>상품 등록</h2>
+        <div class="product-container">
+            <form>
+                <div>
+                    <label for="product-name">상품명</label>
+                    <input type="text" id="product-name" placeholder="상품명을 입력하세요">
+                </div>
+                <div>
+                    <label for="price">가격</label>
+                    <input type="text" id="price" placeholder="가격을 입력하세요">
+                </div>
+                
+                <div>
+                    <label for="description">설명</label>
+                    <textarea id="description" placeholder="상품 설명을 입력하세요"></textarea>
+                </div>
+                
+                <div class="file-upload-container">
+                    <label for="product-image">상품 사진</label>
+                    <div class="form-group">
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                    </div>
+                
+                <br>
+                <ul id="preview-container">
+                    <label for="product-image">상품 미리보기</label>
+                    <li>
+                        <img src="product-image/potato.png" alt="상품 이미지">
+                        <div>
+                            <h4>
+                                상품명: 강원 햇감자 1kg
+                            </h4>
+                            강원도에서 캐온 햇감자
+                        </div>
+                    </li>
+                <br>
+                <div class="submit-button">
+                    <button class="upload" type="submit">상품 등록하기</button>
+                </div>
+                
+            </form>
+    </main>
+        
+        </div>
+        <div class="footer">
+            GET-COOL
+        </div>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--회사소개페이지-->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET-COOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/min.css">
+    </style>
+
+</head>
+
+<body>
+        <header class="header">
+            <a href="mobilemain0823.html"><div class="logo">
+                GET - COOL
+            </div></a>
+        </header>
+
+        <div class="slider">
+            <div class="slider-wrapper">
+                <div class="slider-slide">
+                    <img src="ad-image/banner-image1.png" alt="Slide 1">
+                </div>
+                <div class="slider-slide">
+                    <img src="ad-image/banner-image2.png" alt="Slide 2">
+                </div>
+            </div>
+            <div class="slider-nav">
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h3>전통시장 플랫폼 제작의 이유</h3>
+                <p>
+                    GET-COOL은 전통시장을 활성화하고자 하는 열정에서 출발했습니다.
+                    제품을 사고 판매해서 사라지는 전통시장이 다시 활기를 찾게 합니다.
+                </p>
+                <p>
+                    전통시장을 단순히 물건을 사고파는 곳이 아닌,
+                    저희 시장상인들의 이야기, 손님들의 이야기가 담긴 공간입니다.
+                </p>
+                <p>
+                    우리 목표는 잃어버린 전통시장의 활력을 디지털 시대에 맞게 재생해
+                    더 많은 사람들이 전통시장을 찾을 수 있도록 돕고자 합니다.
+                </p>
+            </section>
+
+            <section class="section">
+                <h3>저희와 함께하는 전통시장</h3>
+                <p>GET-COOL에 가입한 시장은 현재 고양으로 향후에 추가될 예정에 있습니다.</p>
+                <div class="map">
+                    <img src="ad-image/map.png" alt="Map">
+                </div>
+            </section>
+
+            <footer class="footer">
+                <h3>제휴 문의</h3>
+                <p><strong>주소:</strong> 경기 수원시 영통구 광교로 154-42</p>
+                <p><strong>전화:</strong> 010-0000-0000</p>
+                <p><strong>이메일:</strong> GET_COOL@kyonggi.ac.kr</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0; /* 현재 슬라이드 인덱스 초기화 */
+        const slides = document.querySelectorAll('.slider-slide'); /* 슬라이드 요소 선택 */
+        const dots = document.querySelectorAll('.slider-nav button'); /* 슬라이더 네비게이션 버튼 선택 */
+        const totalSlides = slides.length; /* 전체 슬라이드 개수 */
+
+        function showSlide(index) { /* 특정 슬라이드 표시 함수 */
+            const newTransformValue = -index * 100;
+            document.querySelector('.slider-wrapper').style.transform = `translateX(${newTransformValue}%)`; /* 슬라이드 이동 */
+            dots.forEach(dot => dot.classList.remove('active')); /* 모든 네비게이션 버튼에서 active 클래스 제거 */
+            dots[index].classList.add('active'); /* 현재 슬라이드 네비게이션 버튼에 active 클래스 추가 */
+        }
+
+        function nextSlide() { /* 다음 슬라이드로 이동하는 함수 */
+            currentIndex = (currentIndex + 1) % totalSlides; /* 인덱스 증가, 마지막 슬라이드이면 처음으로 */
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() { /* 이전 슬라이드로 이동하는 함수 */
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; /* 인덱스 감소, 처음 슬라이드이면 마지막으로 */
+            showSlide(currentIndex);
+        }
+
+        dots.forEach((dot, index) => { /* 각 네비게이션 버튼에 이벤트 리스너 추가 */
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        setInterval(nextSlide, 3000); /* 3초마다 슬라이드 변경 */
+        showSlide(currentIndex); /* 초기 슬라이드 표시 */
+    </script>
+
+<div class="footerr">
+    GET-COOL
+</div>
+</body>
+</html>

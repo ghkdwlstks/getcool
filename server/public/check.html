@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- 상인매출페이지 -->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check - GET COOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/check.css">
+</head>
+
+
+
+
+
+<body>
+
+    <header>
+        <a href="mobilemain0823.html"><div class="logo">
+            GET - COOL
+        </div></a>
+    </header>
+    
+    <hr class="divider">
+
+    <div class="menu-bar">
+        <a href="check.html" class="menu-item">가게 현황</a>
+        <a href="product_list.html" class="menu-item">상품 관리</a>
+        <a href="#" class="menu-item">가게 문의</a>
+        <a href="edit_Minfo.html" class="menu-item">정보 수정</a>
+    </div>
+
+    <hr class="divider">
+<main>
+    <section class="sales-info">
+        <div class="sales-chart">
+            <h2>매출 추이</h2>
+            <div class="chart-container">
+                <img src="sales-chart.png" alt="매출 추이 그래프">
+            </div>
+        </div>
+        <div class="rating-info">
+            <h2>우리 가게 평점</h2>
+            <div class="rating">4.7</div>
+        </div>
+    </section>
+
+    <section class="operation-section">
+        <h2>영업 상태 변경</h2>
+        <hr class="section-divider">
+        <div class="operation-status">
+            <p>현재 상태: <span class="current-status">주문 받는 중, 영업 진행중</span></p>
+        </div>
+        <form class="operation-form">
+            <div class="horizontal-operations">
+                <div class="order-hold-section">
+                    <label for="order-hold-time">주문 정지</label>
+                    <select id="order-hold-time">
+                        <option value="30">30분</option>
+                        <option value="60">60분</option>
+                        <option value="90">90분</option>
+                    </select>
+                    <select id="order-hold-reason">
+                        <option value="기타">기타</option>
+                        <option value="주문폭주">주문폭주</option>
+                        <option value="재고 소진">재고 소진</option>
+                    </select>
+                    <button class="change-operation">주문 정지하기</button>
+                </div>
+
+                <div class="status-options">
+                    <label for="operation-status">영업 상태 변경</label>
+                    <div class="toggle-status">
+                        <input type="radio" id="open" name="operation-status" value="영업중" checked>
+                        <label for="open" class="status-radio">영업중</label>
+                        <input type="radio" id="closed" name="operation-status" value="영업중지">
+                        <label for="closed" class="status-radio">영업중지</label>
+                    </div>
+                    <select id="status-reason">
+                        <option value="기타">기타</option>
+                        <option value="재고 소진">재고 소진</option>
+                        <option value="운영 시간 종료">운영 시간 종료</option>
+                    </select>
+                    <button class="change-operation">영업 변경하기</button>
+                </div>
+            </div>
+        </form>
+        <hr class="section-divider">
+    </section>
+
+    <section class="recent-orders-section">
+        <div class="orders-header">
+            <h2>최근 주문 조회</h2>
+            <a href="all_orders.html" class="view-all-button">전체보기</a> <!-- 전체보기 버튼 위치 -->
+        </div>
+        <hr class="section-divider">
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>주문번호</th>
+                    <th>상태</th>
+                    <th>주문시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CAF23W</td>
+                    <td>당근 케이크 준비중</td>
+                    <td>15:47</td>
+                </tr>
+                <tr>
+                    <td>DFF58Q</td>
+                    <td>사과 샐러드 준비중</td>
+                    <td>13:25</td>
+                </tr>
+                <tr>
+                    <td>LPJ2KF</td>
+                    <td>피망 샌드위치 준비중</td>
+                    <td>09:50</td>
+                </tr>
+                <!-- 추가적인 주문 항목을 이곳에 추가 -->
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<div class="footer">
+    GET-COOL
+</div>
+</body>
+</html>

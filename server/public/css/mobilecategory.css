@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 따름 */
+    display: block;
+    cursor: pointer;
+}
+
+/* 추가적으로 링크가 클릭될 때 스타일 변경 방지 */
+a:visited, a:hover, a:active {
+    color: inherit; /* 색상 변경 방지 */
+}
+
+/*헤더*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.icon-left, .icon-right {
+    width: 28px;
+}
+.icon-left img, .icon-right img {
+    width: 100%;
+    height: auto;
+}
+.logo {
+    font-size: 1.8rem; /*1rem= 16px*/
+    text-align: center;
+    flex: 1;
+}
+
+/*검색창*/
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background-color: #BFD594;
+    padding: 10px;
+}
+.search-box input {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 5px;
+    font-size: 1.2rem;
+    background-color: #BFD594;
+}
+.search-box button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+/*광고*/
+.ad-container {
+    margin-top: 0.5rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.ad-banner {
+    display: flex;
+    transition: transform 0.5s ease; /* 슬라이드 전환 애니메이션 */
+}
+.ad-slide {
+    position: relative;
+    min-width: 100%; /* 슬라이드가 화면에 하나씩만 표시되도록 설정 */
+    transition: transform 0.5s ease; /* 슬라이드 전환 애니메이션 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;
+}
+.ad-slide img {
+    width:100%;
+}
+
+/* 광고 라벨 */
+.ad-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: black;
+    padding: 3px 8px;
+    font-size: 1rem;
+}
+
+/*광고 페이지 인디케이터 */
+.ad-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);/*중앙 이동*/
+    display: flex;
+    gap: 8px;
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+}
+.indicator.active {
+    background-color: white;
+}
+
+/* 카테고리 네비게이션 바 스타일 */
+.category-nav {
+    position: relative;
+    overflow-x: scroll; /* 가로 스크롤 활성화 */
+    padding: 10px 0px;
+    background-color: #f2f2f2;
+}
+.category-container {
+    display: flex;
+}
+.category-item {
+    text-align: center;
+    padding: 5px 0px;
+    cursor: pointer;
+    color: #888; /* 기본 회색 글씨 */
+    flex-shrink: 0;
+    width: 20%; /* 각 아이템이 20% 너비를 가지도록 설정 */
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+}
+
+.category-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.category-item span {
+    font-size: 0.9rem;
+}
+
+/* 선택된 카테고리 스타일 */
+.category-item.active span {
+    color: #007bff; /* 선택된 카테고리 글씨 색상 파란색 */
+}
+
+/* 카테고리 선택 시 스타일 변경 */
+.category-item:hover span {
+    color: #007bff;
+}
+
+/* 필터 섹션 스타일 */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.filter-select select {
+    padding: 5px 15px;
+    font-size: 1rem;
+    color: #666; /* 회색 글씨 */
+    border: 1px solid #ccc; /* 회색 테두리 */
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.filter-checkbox input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.filter-checkbox label {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* 상품 컨테이너 */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    justify-content: space-between;
+    overflow-y: auto; /* 상품이 많을 경우 스크롤 가능 */
+}
+
+/* 상품 카드 */
+.product-card {
+    width : 45%;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 상품 이미지 */
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* 상품명 */
+.product-name {
+    font-size: 1rem;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 최대 2줄까지 표시 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 초과 시 ...으로 표시 */
+    white-space: normal;
+    line-height: 1.4em;
+}
+
+/* 위로 이동 버튼 스타일 */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #BFD594; /* 파란색 배경 */
+    color: white;
+    border: none;
+    border-radius: 10px; /* 둥근 사각형 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-to-top i {
+    font-size: 1.5rem;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+

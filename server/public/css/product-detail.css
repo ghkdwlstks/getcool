@@ -1,0 +1,443 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 따름 */
+    display: block;
+    cursor: pointer;
+}
+
+/* 추가적으로 링크가 클릭될 때 스타일 변경 방지 */
+a:visited, a:hover, a:active {
+    color: inherit; /* 색상 변경 방지 */
+}
+
+/*헤더*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.icon-left, .icon-right {
+    width: 28px;
+}
+.icon-left img, .icon-right img {
+    width: 100%;
+    height: auto;
+}
+.logo {
+    font-size: 1.8rem; /*1rem= 16px*/
+    text-align: center;
+    flex: 1;
+}
+
+/*검색창*/
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background-color: #BFD594;
+    padding: 10px;
+}
+.search-box input {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 5px;
+    font-size: 1.2rem;
+    background-color: #BFD594;
+}
+.search-box button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #f2f2f2;
+    cursor: pointer;
+}
+
+/* 제품 이미지 섹션 */
+.product-image-container {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.product-image-slider {
+    display: flex;
+    transition: transform 0.5s ease; /* 슬라이드 전환 애니메이션 */
+}
+.product-image-slide {
+    position: relative;
+    min-width: 100%; /* 슬라이드가 화면에 하나씩만 표시되도록 설정 */
+    transition: transform 0.5s ease; /* 슬라이드 전환 애니메이션 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;
+}
+.product-image-slide img {
+    width:100%;
+}
+
+/* 페이지 인디케이터 스타일 */
+.page-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+}
+.indicator.active {
+    background-color: white;
+}
+
+/* 판매자 정보란 */
+.seller-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    padding-bottom: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* 왼쪽 부분: 판매자 정보 */
+.seller-left {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.seller-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 원형 프로필 이미지 */
+    margin-right: 10px;
+}
+
+.seller-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.seller-name {
+    font-weight: bold;
+}
+
+.shop-label {
+    font-size: 0.8rem;
+    color: #888; /* 회색 글씨 */
+}
+
+/* 오른쪽 부분: 별점*/
+.rating {
+    display: flex;
+    text-align: right;
+    align-items: center;
+    color: #f39c12; /* 별 색상 */
+}
+.review-count {
+    margin-left: 10px;
+    color: #387CCD;
+}
+
+/* 하단 부분: 상품명 및 가격 정보 */
+.seller-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* 아래쪽으로 정렬 */
+    padding: 15px;
+    padding-top: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex: 1; /* 상품명에 남은 공간을 모두 사용 */
+    margin-right: 10px; /* 가격과의 간격 */
+    word-wrap: break-word; /* 긴 텍스트를 줄바꿈 */
+}
+
+.price {
+    text-align: left;
+}
+
+.original-price {
+    color: #888; /* 회색 글씨 */
+    text-decoration: line-through; /* 취소선 */
+    margin-right: 10px;
+}
+
+.discounted-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* 추천 상품 섹션 */
+.recommended-section {
+    padding: 5px 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.recommended-header {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 상품 카드 섹션 */
+.recommended-products {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* 카드 간격 */
+    padding-bottom: 5px;
+}
+
+.product-card {
+    flex: 0 0 auto; /* 가로 스크롤이 가능하도록 설정 */
+    width: 100px; /* 카드의 너비 */
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.recommended-product-name {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 텍스트가 넘칠 경우 ...으로 표시 */
+}
+
+/* 상세 정보 섹션 */
+.details-section {
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.details-content {
+    max-height: 300px; /* 초기 최대 높이 설정 (이미지가 부분적으로 보이도록) */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-top: 15px;
+}
+
+.details-content.active {
+    max-height: none; /* 확장 시 최대 높이 설정 */
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+    max-height: calc(100vh - 300px); /* 초기 화면에 보이는 이미지의 최대 높이 */
+}
+
+.details-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.details-button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+    color: black;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* 하단 고정 버튼들 */
+.fixed-buttons {
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000; /* 다른 요소들보다 위에 표시 */
+}
+.cart-button {
+    width: 95%;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: #BFD594;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding : 15px;
+    opacity: 0.9; /* 버튼을 살짝 투명하게 설정 */
+    border-radius: 5px;
+}
+
+/* 위로 이동 버튼 스타일 */
+.scroll-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #BFD594; /* 파란색 배경 */
+    color: white;
+    border: none;
+    border-radius: 10px; /* 둥근 사각형 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-to-top i {
+    font-size: 1.5rem;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 하단 팝업 창 */
+.popup {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #e8e8e8;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0 0;
+    transition: bottom 0.3s ease;
+    z-index: 1000;
+}
+
+.popup.active {
+    bottom: 0;
+}
+
+.popup-header {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.popup-handle {
+    width: 40px;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#option-select {
+    margin : 10px 0;
+    padding : 10px;
+}
+
+.quantity-selector {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.quantity-button {
+    background-color: #BFD594;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quantity {
+    width: 80px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    height: 40px;
+    margin: 0 -1px; /* 가운데 입력칸과 버튼이 붙도록 함 */
+    background-color: white; /* 가운데는 흰색 */
+    color: black;
+    box-sizing: border-box; /* 박스의 크기를 패딩과 보더를 포함한 크기로 계산 */
+}
+
+.estimated-price {
+    display: flex;
+    justify-content: right;
+}
+
+#estimated-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.price-display {
+    color: #000;
+}
+
+.add-to-cart-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #BFD594;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+.footer {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}

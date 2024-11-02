@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET - COOL wishlist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/wishlist.css">
+</head>
+<body>
+
+<a href="mobilemain0823.html"><div class="logo">
+    GET - COOL
+</div></a>
+
+<header>
+    <h1>장바구니 목록</h1>
+</header>
+
+<hr class="main_start">
+<div class="content">
+    <div class="wishlist">
+        <h3>내 장바구니</h3>
+        <div class="wishlist-container" id="wishlistContainer">
+            <!-- 장바구니 항목이 여기에 표시됩니다 -->
+    </div>
+</div>
+
+<div class="submit-button">
+    <a href="pay.html">
+        <div class="upload">주문하기</div>
+    </a>
+</div>
+
+
+<footer>
+    <p>&copy; 2024 GET - COOL</p>
+</footer>
+
+<script>
+    // 가장 최근 cart 데이터를 가져와서 출력
+    async function loadWishlist() {
+        try {
+            const response = await fetch('/api/wishlist');
+            const data = await response.json();
+
+            const container = document.getElementById('wishlistContainer');
+            container.innerHTML = ''; // 기존 내용을 초기화
+
+            if (data && data.cart_id) {
+                // 제품 정보에 따른 명칭 및 이미지 설정
+                const productName = data.product_id === 1 ? '강원 햇감자 1KG 한봉지' : `Product ID: ${data.product_id}`;
+                const productImage = data.product_id === 1 ? '<img src="product-image/potato.jpg" alt="강원 햇감자 1KG 한봉지" class="product-image">' : '';
+                
+                const itemHTML = `
+                    <div class="wishlist-item">
+                        ${productImage}
+                        <div class="item-details">
+                            <p><strong>${productName}</strong></p>
+                            <p><strong>수량:</strong> ${data.quantity}</p>
+                            <p><strong>가격:</strong> ₩${data.price.toLocaleString()}</p>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML = itemHTML;
+            } else {
+                container.innerHTML = '<p>장바구니에 항목이 없습니다.</p>';
+            }
+        } catch (error) {
+            console.error("Error loading wishlist:", error);
+            document.getElementById('wishlistContainer').innerHTML = '<p>데이터를 불러오는 중 오류가 발생했습니다.</p>';
+        }
+    }
+
+    // 페이지 로드 시 장바구니 데이터 가져오기
+    document.addEventListener('DOMContentLoaded', loadWishlist);
+</script>
+
+</body>
+</html>

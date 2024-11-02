@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 및 회원가입</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2 id="formTitle">로그인</h2>
+
+        <!-- 로그인 폼 -->
+        <form id="loginForm">
+            <label for="loginName">아이디</label>
+            <input type="text" id="loginName" name="name" required>
+
+            <label for="loginPassword">비밀번호</label>
+            <input type="password" id="loginPassword" name="password" required>
+
+            <button type="submit">로그인</button>
+
+            <!-- 회원가입으로 이동 링크 -->
+            <p>계정이 없으신가요? <a href="#" onclick="showRegisterForm()">회원가입</a></p>
+        </form>
+
+        <!-- 회원가입 폼 -->
+        <form id="registerForm" style="display: none;">
+            <label for="registerName">아이디</label>
+            <input type="text" id="registerName" name="name" required>
+
+            <label for="registerPassword">비밀번호</label>
+            <input type="password" id="registerPassword" name="password" required>
+
+            <button type="submit">회원가입</button>
+
+            <!-- 로그인으로 이동 링크 -->
+            <p>이미 계정이 있으신가요? <a href="#" onclick="showLoginForm()">로그인</a></p>
+        </form>
+
+        <p id="message"></p> <!-- 메시지 출력 -->
+    </div>
+
+    <script>
+        // 로그인 폼과 회원가입 폼 전환
+        function showLoginForm() {
+            document.getElementById('formTitle').textContent = '로그인';
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        }
+
+        function showRegisterForm() {
+            document.getElementById('formTitle').textContent = '회원가입';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        // 로그인 기능
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('loginName').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const response = await fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, password })
+            });
+
+            const messageElement = document.getElementById('message');
+
+            if (response.ok) {
+                messageElement.style.color = 'green';
+                messageElement.textContent = '로그인 성공! 장바구니 페이지로 이동합니다.';
+                setTimeout(() => window.location.href = 'wishlist.html', 2000);
+            } else {
+                messageElement.style.color = 'red';
+                messageElement.textContent = '로그인 실패: 아이디 또는 비밀번호가 틀렸습니다.';
+            }
+        });
+
+        // 회원가입 기능
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('registerName').value;
+            const password = document.getElementById('registerPassword').value;
+
+            const response = await fetch('http://localhost:3000/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, password })
+            });
+
+            const messageElement = document.getElementById('message');
+
+            if (response.ok) {
+                messageElement.style.color = 'green';
+                messageElement.textContent = '회원가입 성공! 로그인 페이지로 이동합니다.';
+                showLoginForm(); // 로그인 폼으로 전환
+            } else if (response.status === 409) {
+                messageElement.style.color = 'red';
+                messageElement.textContent = '회원가입 실패: 이미 존재하는 아이디입니다.';
+            } else {
+                messageElement.style.color = 'red';
+                messageElement.textContent = '회원가입 실패: 서버 오류가 발생했습니다.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<!-- Created: 2024-09-03 -->
+<!-- Last Modified: 2024-09-09 -->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET-COOL(productdetail)0903</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/product-detail.css">
+</head>
+<body>
+
+<header>
+    <div class="icon-left">
+        <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+        <img src="icon-image/icon-bell.png" alt="알림 아이콘">
+    </div>
+    <a href="./mobilemain0823.html"><div class="logo">
+        GET - COOL
+    </div></a>
+    <div class="icon-right">
+        <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+        <img src="icon-image/icon-bag.png" alt="장바구니 아이콘">
+    </div>
+</header>
+
+<div class="search-container">
+    <div class="search-box">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" placeholder="검색어를 입력하세요...">
+    </div>
+</div>
+
+<!-- 제품 이미지 섹션 -->
+<div class="product-image-container">
+    <div class="product-image-slider">
+        <div class="product-image-slide">
+            <img src="product-detail-image/potato-detail1.jpg" alt="제품 상세 이미지 1">
+        </div>
+        <div class="product-image-slide">
+            <img src="product-detail-image/potato-detail2.jpg" alt="제품 상세 이미지 2">
+        </div>
+        <div class="product-image-slide">
+            <img src="product-detail-image/potato-detail3.jpg" alt="제품 상세 이미지 3">
+        </div>
+    </div>
+    <!-- 페이지 인디케이터 -->
+    <div class="page-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+    </div>
+</div>
+
+<div class="seller-info">
+    <!-- 왼쪽 부분: 판매자 정보 -->
+    <div class="seller-left">
+            <img src="profile-image/seller-profile.jpg" alt="판매자 프로필" class="seller-profile">
+            <div class="seller-details">
+                <div class="seller-name">강원도 멧밭쥐네 ></div>
+                <div class="shop-label">판매자샵</div>
+            </div>
+    </div>
+
+    <!-- 오른쪽 부분: 별점 정보 -->
+    <div class="rating">
+        ★★★★☆ <span class="review-count">(1,500)</span>
+    </div>
+</div>
+
+<!-- 하단 부분: 상품명 및 가격 정보 -->
+<div class="seller-bottom">
+    <div class="product-name">강원 햇감자 1KG 한봉지</div>
+    <div class="price">
+        <div class="original-price">₩30,000</div>
+        <div class="discounted-price">₩25,000</div>
+    </div>
+</div>
+
+
+<!-- 상품 추천 부분(수정 및 링크 연결 필요) -->
+<div class="recommended-section">
+    <div class="recommended-header">이런 상품은 어떠세요?</div>
+    <div class="recommended-products">
+        <div class="product-card">
+            <a href=""><img src="product-image/carrots.jpg" alt="상품 1"></a>
+            <a href=""><div class="recommended-product-name">상품 이름aaaaaaaaaaaaaaaaaa</div></a>
+        </div>
+        <div class="product-card">
+            <img src="product-image/potato.jpg" alt="상품 2">
+            <div class="recommended-product-name">상품 이름이 길 경우 ...</div>
+        </div>
+        <div class="product-card">
+            <img src="product-image/squid.jpg" alt="상품 3">
+            <div class="recommended-product-name">상품 이름이 길 경우 ...</div>
+        </div>
+        <div class="product-card">
+            <img src="product-image/squid.jpg" alt="상품 3">
+            <div class="recommended-product-name">상품 이름이 길 경우 ...</div>
+        </div>
+        <div class="product-card">
+            <img src="product-image/squid.jpg" alt="상품 3">
+            <div class="recommended-product-name">상품 이름이 길 경우 ...</div>
+        </div>
+        <!-- 추가 상품들 -->
+    </div>
+</div>
+
+<!-- 상세 정보 -->
+<div class="details-section">
+    <div class="details-content">
+        <div class="image-container">
+            <img src="product-detail-image/potato-description.jpeg" alt="상세 제품 이미지" class="details-image">
+        </div>
+    </div>
+    <button class="details-button">더보기</button>
+</div>
+
+<!-- 하단 고정 버튼들 -->
+<div class="fixed-buttons">
+    <button class="cart-button" id = "open-popup">상품 옵션 선택하기(담기)</button>
+</div>
+
+<!-- 하단 팝업 창 -->
+<div class="popup" id="popup">
+    <div class="popup-header">
+        <div class="popup-handle"></div>
+    </div>
+    <div class="popup-content">
+        <label for="option-select">상품 선택</label>
+        <select id="option-select">
+            <option value="">상품 옵션 선택</option>
+            <option value="1">옵션1</option>
+            <option value="2">옵션2</option>
+            <option value="3">옵션3</option>
+        </select>
+
+        <span>수량 선택</span>
+        <div class="quantity-selector">
+            <button class="quantity-button" id="decrease">-</button>
+            <input type="text" id="quantity" value="1" readonly>
+            <button class="quantity-button" id="increase">+</button>
+        </div>
+
+        <span>예상 금액 </span>
+        <div class="estimated-price">
+            <span class="price-display" id="estimated-price">₩25,000</span>
+        </div>
+
+        <button class="add-to-cart-button">장바구니에 담기</button>
+    </div>
+</div>
+
+<!-- 페이지 상단으로 이동하는 버튼 -->
+<button id="scrollToTopBtn" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div class="footer">
+    GET-COOL
+</div>
+
+</body>
+
+<script src="js/product-detail.js"></script>
+</html>

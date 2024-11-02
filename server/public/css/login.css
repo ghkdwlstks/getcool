@@ -1,0 +1,99 @@
+/* 기본 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: #f7f7f7; /* 배경색 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* 로그인 컨테이너 스타일 */
+.login-container {
+    background-color: #d8e7ba;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* 제목 스타일 */
+.login-container h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* 입력 필드 스타일 */
+.login-container label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* 버튼 스타일 */
+.login-container button {
+    background-color: #6D8812;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login-container button:hover {
+    background-color: #4f6610;
+}
+
+/* 로그인 메시지 스타일 */
+#loginMessage {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 추가 스타일 (반응형) */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .login-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .login-container button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

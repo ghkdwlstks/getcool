@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>로그인</h2>
+        <form id="loginForm">
+            <label for="username">아이디</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">로그인</button>
+        </form>
+        <p id="loginMessage"></p> <!-- 로그인 메시지 출력 -->
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // 페이지 새로고침 방지
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const messageElement = document.getElementById('loginMessage');
+
+            if (response.ok) {
+                const result = await response.json();
+                messageElement.style.color = 'green';
+                messageElement.textContent = '로그인 성공! 장바구니 페이지로 이동합니다.';
+
+                // 2초 후 장바구니 페이지로 이동
+                setTimeout(() => {
+                    window.location.href = 'wishlist.html';
+                }, 2000);
+            } else {
+                messageElement.style.color = 'red';
+                messageElement.textContent = '로그인 실패: 아이디 또는 비밀번호가 틀렸습니다.';
+            }
+        });
+    </script>
+</body>
+</html>

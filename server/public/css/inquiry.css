@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 따름 */
+    display: block;
+    cursor: pointer;
+}
+
+/* 추가적으로 링크가 클릭될 때 스타일 변경 방지 */
+a:visited, a:hover, a:active {
+    color: inherit; /* 색상 변경 방지 */
+}
+
+
+.logo {
+    font-size: 1.8rem; /*1rem= 16px*/
+    text-align: center;
+    flex: 1;
+}
+
+/*헤더*/
+header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.menu-bar {
+    
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-bar a {
+    color: black; /* 검은색 텍스트 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.menu-bar a:hover {
+    color: #4CAF50; /* 호버 시 색상 */
+}
+
+.divider2 {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 10px 0;
+}
+
+.divider1 {
+    border: 0;
+    height: 1px;
+    background: #000000;
+    margin: 10px 0;
+}
+
+.menu-item {
+    text-align: center;
+    flex: 1;
+}
+
+.menu-item img {
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.menu-item span {
+    font-size: 12px;
+}
+
+.menu-item.active {
+    font-weight: bold;
+}
+
+.previous-orders {
+    padding: 10px;
+    background-color: white;
+}
+
+.previous-orders h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.answer {
+    color : red;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.answer_none {
+    color : skyblue;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.order-item a {
+    color: black; /* 검은색 텍스트 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.order-item a:hover {
+    color: #4CAF50; /* 호버 시 색상 */
+}
+
+.order-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.order-details {
+    flex: 1;
+}
+
+.order-details .product-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.order-details .order-time,
+.order-details .order-status {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+.footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}

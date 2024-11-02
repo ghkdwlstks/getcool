@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- 주문조회페이지 -->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주문 조회 - GET COOL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/all_orders.css">
+</head>
+
+
+<body>
+
+    <header>
+        <a href="mobilemain0823.html"><div class="logo">
+            GET - COOL
+        </div></a>
+    </header>
+
+    <section class="order-search-section">
+        <h2 class="section-title">주문 조회</h2>
+        <div class="search-container">
+            <div class="search-box">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" placeholder="검색어를 입력하세요...">
+            </div>
+        </div>
+        <div class="date-selectors">
+            <select id="year" class="date-select">
+                <option value="2024">2024</option>
+            </select>
+            <select id="month" class="date-select">
+                <option value="10">10월</option>
+            </select>
+            <select id="day" class="date-select">
+                <option value="15">15일</option>
+            </select>
+            <button type="button" class="search-date-button">검색</button> <!-- 날짜 검색 버튼 -->
+        </div>
+    </section>
+
+    <section class="orders-list-section">
+        <table class="orders-table">
+            <tbody>
+                <tr>
+                    <td class="order-info">
+                        <div class="order-number">CAF23W</div>
+                        <div class="order-status">당근 케이크 준비중</div>
+                        <div class="order-time">15:47</div>
+                    </td>
+                    <td class="arrow-cell">
+                        <a href="#" class="arrow-link">&#8250;</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="order-info">
+                        <div class="order-number">DFF58Q</div>
+                        <div class="order-status">사과 샐러드 준비중</div>
+                        <div class="order-time">13:25</div>
+                    </td>
+                    <td class="arrow-cell">
+                        <a href="#" class="arrow-link">&#8250;</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="order-info">
+                        <div class="order-number">LPJ2KF</div>
+                        <div class="order-status">피망 샌드위치 준비중</div>
+                        <div class="order-time">09:50</div>
+                    </td>
+                    <td class="arrow-cell">
+                        <a href="#" class="arrow-link">&#8250;</a>
+                    </td>
+                </tr>
+                <!-- 추가 주문 항목을 이곳에 추가 -->
+            </tbody>
+        </table>
+    </section>
+    
+    <div class="footer">
+        GET-COOL
+    </div>
+</body>
+</html>

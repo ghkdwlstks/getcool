@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<!-- Created: 2024-08-23 -->
+<!-- Last Modified: 2024-08-28 -->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET - COOL(category)0823</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/mobilecategory.css">
+</head>
+<body>
+
+<header>
+    <div class="icon-left">
+        <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+        <img src="icon-image/icon-bell.png" alt="알림 아이콘">
+    </div>
+    <a href="mobilemain0823.html"><div class="logo">
+        GET - COOL
+    </div></a>
+    <div class="icon-right">
+        <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+        <img src="icon-image/icon-bag.png" alt="장바구니 아이콘">
+    </div>
+</header>
+
+<div class="search-container">
+    <div class="search-box">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" placeholder="검색어를 입력하세요...">
+    </div>
+</div>
+
+<!-- 광고 배너 섹션 -->
+<div class="ad-container">
+    <div class="ad-banner">
+        <div class="ad-slide">
+            <span class="ad-label">광고</span>
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="ad-image/ad-image1.png" alt="광고 이미지 1">
+        </div>
+        <div class="ad-slide">
+            <span class="ad-label">광고</span>
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="ad-image/ad-image2.png" alt="광고 이미지 2">
+        </div>
+        <div class="ad-slide">
+            <span class="ad-label">광고</span>
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="ad-image/ad-image3.png" alt="광고 이미지 3">
+        </div>
+    </div>
+    <!-- 페이지 인디케이터 -->
+    <div class="ad-indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+    </div>
+</div>
+
+<!-- 카테고리 네비게이션 바 -->
+<nav class="category-nav">
+    <div class="category-container">
+        <div class="category-item active">
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="icon-image/icon-shrimp.png" alt="수산물">
+            <span>수산물</span>
+        </div>
+        <div class="category-item">
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="icon-image/icon-vegetable.png" alt="농산물">
+            <span>농산물</span>
+        </div>
+        <div class="category-item">
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="icon-image/icon-meat.png" alt="축산물">
+            <span>축산물</span>
+        </div>
+        <div class="category-item">
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="icon-image/icon-bottles.png" alt="가공식품">
+            <span>가공식품</span>
+        </div>
+        <div class="category-item">
+            <!-- DB 연동 후 실제 이미지로 대체 예정 -->
+            <img src="icon-image/icon-health.png" alt="생활용품">
+            <span>건강식품</span>
+        </div>
+    </div>
+</nav>
+
+<!-- 필터 섹션 -->
+<div class="filter-container">
+    <div class="filter-select">
+        <select>
+            <option value="distance">거리순</option>
+            <option value="price">가격순</option>
+        </select>
+    </div>
+    <div class="filter-checkbox">
+        <input type="checkbox" id="exclude-soldout">
+        <label for="exclude-soldout">품절상품 제외하기</label>
+    </div>
+</div>
+
+<!--상품 부분-->
+<div class="product-container">
+    <!-- DB 연동 후 실제 데이터로 대체 예정 -->
+    <div class="product-card">
+        <img src="product-image/abalone.png" alt="상품 1">
+        <div class="product-name">[해산물] 쫄깃 쫄깃 전복 3마리 [10,000 원]</div>
+    </div>
+    <div class="product-card">
+        <img src="product-image/squid.png" alt="상품 2">
+        <div class="product-name">[해산물] 여수 밤바다 갑오징어 [10,000 원]</div>
+    </div>
+    <div class="product-card">
+        <img src="product-image/potato.png" alt="상품 3">
+        <a href="ProductDetail.html"><div class="product-image">
+            <div class="product-name">[농산물] 강원 햇감자 1kg 한봉지 [10,000 원]</div>
+        </div></a>
+    </div>
+    <div class="product-card">
+        <img src="product-image/salmon.png" alt="상품 2">
+        <div class="product-name">[해산물] 노르웨이산 연어 1kg [10,000 원]
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="product-image/scallop.png" alt="상품 3">
+        <div class="product-name">[해산물] 홍가리비 1kg [10,000 원]</div>
+    </div>
+    <div class="product-card">
+        <img src="product-image/shirmp.png" alt="상품 2">
+        <div class="product-name">[해산물] 밥도둑 간장새우 500g [10,000 원]</div>
+    </div>
+</div>
+
+<!-- 페이지 상단으로 이동하는 버튼 -->
+<button id="scrollToTopBtn" class="scroll-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div class="footer">
+    GET-COOL
+</div>
+
+</body>
+
+<script src="js/category.js"></script>
+</html>

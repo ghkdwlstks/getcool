@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- 가게정보수정페이지 -->
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET - COOL 상품목록</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/edit_Minfo.css">
+</head>
+
+
+<body>
+    <header>
+        <a href="mobilemain0823.html"><div class="logo">
+            GET - COOL
+        </div></a>
+    </header>
+
+        <!--메뉴 바-->
+        <hr class="divider">
+
+        <div class="menu-bar">
+            <a href="check.html" class="menu-item">가게 현황</a>
+            <a href="product_list.html" class="menu-item">상품 관리</a>
+            <a href="#" class="menu-item">가게 문의</a>
+            <a href="edit_Minfo.html" class="menu-item">정보 수정</a>
+        </div>
+
+        <hr class="divider">
+
+    <section class="account-info">
+        <div class="profile-photo">
+            <img src="profile-image/profile-none.png" alt="프로필 사진">
+            <button class="change-photo-btn">프로필 사진 변경하기</button>
+        </div>
+        <div class="info-item">
+            <label for="name">가게 이름</label>
+            <input type="text" id="Market_Name" value="거북 상점" disabled>
+        </div>
+        <div class="info-item">
+            <label for="nickname">사장 이름</label>
+            <input type="text" id="CEO_Name" value="토끼와 거북거북" disabled>
+        </div>
+        <div class="info-item">
+            <label for="phone">가게 번호</label>
+            <input type="text" id="Market_Number" value="02-111-2222" disabled>
+        </div>
+        <div class="info-item">
+            <label for="phone">전화 번호</label>
+            <input type="text" id="Phone_Number" value="010-1111-2222" disabled>
+        </div>
+        <div class="info-item">
+            <label for="email">이메일</label>
+            <input type="email" id="email" value="Turtle@kyonggi.ac.kr" disabled>
+        </div>
+        <div class="info-item">
+            <label>마케팅 수신 동의</label>
+            <div class="radio-group">
+                <label><input type="radio" name="marketing-consent" checked> 예</label>
+                <label><input type="radio" name="marketing-consent"> 아니오</label>
+            </div>
+        </div>
+        <div class="info-item">
+            <label>9시 이후 마케팅 수신 동의</label>
+            <div class="radio-group">
+                <label><input type="radio" name="late-marketing-consent" checked> 예</label>
+                <label><input type="radio" name="late-marketing-consent"> 아니오</label>
+            </div>
+        </div>
+        <div class="actions">
+            <a href="#" class="text-button">회원정보 삭제</a>
+            <a href="#" class="text-button">회원탈퇴</a>
+        </div>
+    </section>
+    <div class="footer">
+        GET-COOL
+    </div>
+
+</body>
+</html>

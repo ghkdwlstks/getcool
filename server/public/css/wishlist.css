@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 링크 스타일 초기화 */
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: inherit; /* 부모 요소의 색상을 따름 */
+    display: block;
+    cursor: pointer;
+}
+
+/* 추가적으로 링크가 클릭될 때 스타일 변경 방지 */
+a:visited, a:hover, a:active {
+    color: inherit; /* 색상 변경 방지 */
+}
+
+/*헤더*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.icon-left, .icon-right {
+    width: 28px;
+}
+.icon-left img, .icon-right img {
+    width: 100%;
+    height: auto;
+}
+.logo {
+    font-size: 1.8rem; /*1rem= 16px*/
+    text-align: center;
+    flex: 1;
+}
+
+.content {
+    padding: 20px;
+}
+.wishlist {
+    background-color: #d8e7ba;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.wishlist h3 {
+    margin-top: 0;
+}
+.wishlist-item {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ffffff;
+    padding: 10px 0;
+}
+.wishlist-item:first-child {
+    border-top: none;
+}
+.wishlist-item img {
+    width: 50px;
+    margin-right: 20px;
+}
+.wishlist-item .item-details {
+    flex-grow: 1;
+}
+.remove-button {
+    background: #6D8812;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.remove-button:hover {
+    background: #4f6610;
+} 
+       
+/* 주문하기 버튼을 장바구니와 같은 가로 너비로 설정 */
+.submit-button {
+    max-width: 800px; /* wishlist와 동일한 최대 너비 */
+    margin: 20px auto; /* 중앙 정렬 */
+}
+
+.upload {
+    display: block;
+    width: 100%; /* 부모 컨테이너에 맞추어 버튼이 가득 차도록 설정 */
+    background-color: #a5d6a7;
+    color: #333;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.upload:hover {
+    background-color: #81c784;
+}
+
+.item-details {
+    flex-grow: 1;
+    color: #555;
+}
+
+.item-details p {
+    margin: 5px 0;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-control button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.quantity-control input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.product-image {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #888;
+}

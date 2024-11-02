@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전통시장 장바구니</title>
+    <script src="https://kit.fontawesome.com/9a9efcd4cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/wishlist.css">
+</head>
+
+<body>
+<header>
+    <a href="mobilemain0823.html">
+        <div class="logo">GET - COOL<br></div>
+    </a>
+    <br>
+
+    <div class="login-icon">
+        <a href="login.html"><i class="fa-solid fa-user"></i></a>
+    </div>
+</header>
+
+<div class="search-container">
+    <div class="search-box">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" placeholder="검색어를 입력하세요...">
+    </div>
+</div>
+
+<hr class="main_start">
+<div class="content">
+    <div class="wishlist">
+        <h3>장바구니</h3>
+        <!-- 임의의 물건 추가 버튼 -->
+        <div class="add-products">
+            <td class="order-info">
+                <div class="order-number">사과 1kg</div>
+                <div class="order-status">14000원</div>
+
+                <button onclick="addToCart(1, 1)">사과 추가</button><br>
+            </td>
+
+            <td class="order-info">
+                <div class="order-number">감자 1kg</div>
+                <div class="order-status">8000원</div>
+
+                <button onclick="addToCart(2, 1)">감자 추가</button><br>
+            </td>
+            
+            <td class="order-info">
+                <div class="order-number">바나나 1kg</div>
+                <div class="order-status">16000원</div>
+
+                <button onclick="addToCart(3, 1)">바나나 추가</button><br>
+            </td>
+        </div>
+    </div>
+</div>
+
+<div class="submit-button">
+    <a href="pay.html">
+        <div class="upload">주문하기</div>
+    </a>
+</div>
+
+<div class="footer">
+    GET-COOL
+</div>
+
+<script>
+    const userId = 1; // 로그인한 사용자 ID
+
+    // 장바구니 목록 가져오기
+    async function fetchCart() {
+        const response = await fetch(`http://localhost:3000/api/cart/${userId}`);
+        const cartItems = await response.json();
+        
+        const wishlistContainer = document.querySelector('.wishlist');
+        wishlistContainer.innerHTML = '<h3>장바구니</h3>'; // 헤더 재설정
+
+        // 상품 이름, 가격, 아이콘 설정
+        const productNames = {
+            1: "사과 1kg",
+            2: "감자 1kg",
+            3: "바나나 1kg"
+        };
+        const productPrices = {
+            1: 14000, // 사과 가격
+            2: 8000,  // 감자 가격
+            3: 16000  // 바나나 가격
+        };
+        const productIcons = {
+            1: "apple-icon.png", // 사과 아이콘 이미지
+            2: "potato-icon.png", // 감자 아이콘 이미지
+            3: "banana-icon.png"  // 바나나 아이콘 이미지
+        };
+
+        // 장바구니 아이템 추가
+        cartItems.forEach(item => {
+            const wishlistItem = document.createElement('div');
+            wishlistItem.className = 'wishlist-item';
+
+            wishlistItem.innerHTML = `
+                <img src="${productIcons[item.product_id]}" alt="${productNames[item.product_id]}" class="product-icon">
+                <div class="item-info">
+                    <h4>${productNames[item.product_id]}</h4>
+                    <p>${productPrices[item.product_id]}원 / 개</p>
+                </div>
+                <div class="item-controls">
+                    <button onclick="decreaseQuantity(${item.cart_id}, ${productPrices[item.product_id]})">-</button>
+                    <span id="quantity-${item.cart_id}">${item.quantity}</span>
+                    <button onclick="increaseQuantity(${item.cart_id}, ${productPrices[item.product_id]})">+</button>
+                </div>
+                <div class="item-price">
+                    총: <span id="total-price-${item.cart_id}">${productPrices[item.product_id] * item.quantity}</span>원
+                </div>
+                <button class="remove-button" onclick="removeItem(${item.cart_id})">삭제</button>
+            `;
+            wishlistContainer.appendChild(wishlistItem);
+        });
+    }
+
+    // 장바구니에 상품 추가
+    async function addToCart(productId, quantity) {
+        const response = await fetch('http://localhost:3000/api/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ user_id: userId, product_id: productId, quantity })
+        });
+
+        if (response.ok) {
+            fetchCart(); // 장바구니 목록 갱신
+            alert('상품이 장바구니에 추가되었습니다!'); // 사용자에게 알림
+        } else {
+            console.error('장바구니에 추가 실패:', response.statusText);
+        }
+    }
+
+    
+    // 페이지 로드 시 장바구니 목록 가져오기
+    window.onload = fetchCart;
+</script>
+</body>
+</html>
